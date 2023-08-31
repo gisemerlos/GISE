@@ -1,8 +1,11 @@
 import { Contacto } from "../src/contactos";
- 
-const updateIPAddress =(contacto: Contacto)=> {
 
-    
+const updateIPAddress = (contactos: Contacto[]) => {
+    contactos.forEach(contacto => {
+        contacto.ip_address = contacto.ip_address + "." + contacto.id
+    });
+    return contactos
+
 }
 
-export {updateIPAddress}
+export { updateIPAddress }
